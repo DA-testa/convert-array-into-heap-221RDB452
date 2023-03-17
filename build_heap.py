@@ -1,4 +1,3 @@
-# python 3
 def sift_down(data, i, swaps):
     n = len(data)
     min_index = i
@@ -23,11 +22,10 @@ def build_heap(data):
 def main():
     n = int(input())
     data = list(map(int, input().split()))
-    assert len(data) == n
     swaps = build_heap(data)
     print(len(swaps))
-    for i, j in swaps:
-        print(i, j)
+    for swap in swaps:
+        print(swap[0], swap[1])
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
