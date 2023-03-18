@@ -17,15 +17,14 @@ def build_heap(data):
         sift_down(data, i, swaps)
     return swaps
 def main():
-    try:
-        n = int(input())
-        data = list(map(int, input().split()))
-        assert len(data) == n
-        for x in data:
-            assert isinstance(x, int)
-    except (ValueError, AssertionError):
-        print("Error: input must contain only integers")
-        return
+   try:
+    n = int(input())
+    a = [int(x) for x in input().split() if x.isdigit()]
+    assert n == len(a)
+except ValueError:
+    print("Error: input must contain only integers")
+    return
+
 
     swaps = build_heap(data)
     print(len(swaps))
