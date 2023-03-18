@@ -17,8 +17,12 @@ def build_heap(data):
     return swaps
 def main():
     n = int(input())
-    data = list(map(int, input().split()))
-    assert len(data) == n
+    try:
+        data = list(map(int, input().split()))
+        assert len(data) == n
+    except ValueError:
+        print("Error: input must contain only integers")
+        return
     swaps = build_heap(data)
     print(len(swaps))
     for i, j in swaps:
@@ -26,4 +30,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
