@@ -1,3 +1,4 @@
+
 def sift_down(data, i, swaps):
     min_index = i
     left_child = 2 * i + 1
@@ -16,9 +17,9 @@ def build_heap(data):
         sift_down(data, i, swaps)
     return swaps
 def main():
-    n = int(input())
     try:
-        data = list(map(int, input().split()))
+        n = int(input().strip())
+        data = list(map(int, input().strip().split()))
         assert len(data) == n
     except ValueError:
         print("Error: input must contain only integers")
@@ -28,6 +29,8 @@ def main():
     for i, j in swaps:
         print(i, j)
 
+
+        
 if __name__ == "__main__":
     main()
 
