@@ -21,7 +21,9 @@ def main():
         n = int(input())
         data = list(map(int, input().split()))
         assert len(data) == n
-    except ValueError:
+        for x in data:
+            assert isinstance(x, int)
+    except (ValueError, AssertionError):
         print("Error: input must contain only integers")
         return
 
@@ -29,6 +31,7 @@ def main():
     print(len(swaps))
     for i, j in swaps:
         print(i, j)
+
 
 
 
