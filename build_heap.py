@@ -29,7 +29,7 @@ def main():
     elif n=='F':
         file = input()
         with open("tests/" + file,'r') as f:
-            n= int(f.realine().strip())
+            n= int(f.readline().strip())
             data = list(map(int,f.radline().split()))
             assert len(data)==n
             swaps = build_heap(data)
@@ -38,9 +38,6 @@ def main():
                 print(i,j)
             
     
-
-    
-        
         
 if __name__ == "__main__":
     main()
