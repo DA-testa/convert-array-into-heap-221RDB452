@@ -30,7 +30,7 @@ def main():
         file = input()
         with open("tests/" + file,'r') as f:
             n= int(f.readline().strip())
-            data = list(map(int,f.radline().split()))
+            data = list(map(int,f.readline().split()))
             assert len(data)==n
             swaps = build_heap(data)
             print(len(swaps))
