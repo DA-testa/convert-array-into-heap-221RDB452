@@ -17,20 +17,29 @@ def build_heap(data):
         sift_down(data,i, swaps)
     return swaps
 def main():
-    try:
-        n =int(input())
-        data = list(map(int, input().split()))
-        assert len(data) == n
-        for x in data:
-            assert isinstance(x, int)
-    except (ValueError, AssertionError):
-        print("Error: input must contain only integers")
-        return
+    n =input().strip()
+    if n=='I':
+        n=int(input())
+        data =list(map(int,input().split()))
+        assert len(data)==n
+        swaps = build_heap(data)
+        print(len(swaps))
+        for i, j in swaps:
+            print(i,j)
+    elif n=='F':
+        file = input()
+        with open("tests/" + file,'r') as f:
+            n= int(f.realine().strip())
+            data = list(map(int,f.radline().split()))
+            assert len(data)==n
+            swaps = build_heap(data)
+            print(len(swaps))
+            for i, j in swaps:
+                print(i,j)
+            
+    
 
-    swaps = build_heap(data)
-    print(len(swaps))
-    for i, j in swaps:
-        print(i,j)
+    
         
         
 if __name__ == "__main__":
