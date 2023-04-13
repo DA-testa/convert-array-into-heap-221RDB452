@@ -1,6 +1,6 @@
 
-def sift_down(data, i, swaps):
-    min_index = i
+def sift_down(data,i,swaps):
+    min_index =i
     left_child = 2*i+1
     if left_child < len(data) and data[left_child] < data[min_index]:
         min_index = left_child
@@ -17,6 +17,7 @@ def build_heap(data):
         sift_down(data,i, swaps)
     return swaps
 def main():
+    
     n =input().strip()
     if n=='I':
         n=int(input())
@@ -34,11 +35,10 @@ def main():
             assert len(data)==n
             swaps = build_heap(data)
             print(len(swaps))
-            for i, j in swaps:
+            for i,j in swaps:
                 print(i,j)
             
     
-        
 if __name__ == "__main__":
     main()
 
